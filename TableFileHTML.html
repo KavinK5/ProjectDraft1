@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'ForCSS/TableStyles.css' %}">
+    <style>
+    .slPL{
+        font-size:1.3em;
+        padding:0 30px;
+    }
+
+        #progLang table tr td{
+                padding:35px;
+                font-size:1.3em;
+                font-weight:bold;
+            }
+
+            #fullstack{
+                display: flex;
+                justify-content: center;
+                margin-top:20px;
+                gap:1.2em;
+            }
+
+            .PLimg{
+                height: 30px;
+                width: 30px;
+                mix-blend-mode: darken;
+                vertical-align: text-top;
+            }
+
+            .tdPL2{
+                padding: 15px;
+            }
+
+        @media (max-width:900px){
+            #progLang table tr td{
+                font-size: 1.1em;
+                padding:20px;
+                background-color: aqua;
+            }
+
+            .PLimg{
+                height:20px;
+                width:20px;
+            }
+
+            .slPL{
+                 font-size:1.2em;
+                 }
+
+
+        }
+
+            @media (max-width:700px){
+            #progLang table tr td{
+                font-size: 0.8em;
+            }
+
+            .slPL{
+                font-size:1.1em;
+                }
+
+            @media (max-width:600px){
+            #progLang table tr td{
+                font-size: 0.7em;
+            }
+
+            .slPL{
+                font-size:0.9em;
+                }
+
+
+        }
+
+@media (max-width:800px){
+    #fullstack{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+.headR{
+        background-color:black;
+}
+    </style>
+</head>
+<body style="background-color:#e5e4e2;">
+<div class="headR" style="background-color:lightslategray;padding-bottom:10px;">
+        <img src="{% static 'ForIMAGES/elysium.png' %}">
+        <a href="{% url 'Form1' %}" style="position:absolute;right:20px;top:25px;text-decoration:none;font-weight:bold;border-radius:10px;font-size:1.1em;color:black;border:2px solid black;padding:5px;" class="BackForm">BackToForm</a>
+    </div>
+
+    <div id="text">
+        <h3>C</h3><h3>o</h3><h3>u</h3><h3>r</h3><h3>s</h3><h3>e</h3><h3>s</h3><h3 style="color:transparent;">_</h3>
+        <h3>O</h3><h3>f</h3><h3>f</h3><h3>e</h3><h3>r</h3><h3>e</h3><h3>d.</h3><h3>.</h3>
+    </div>
+
+
+    <div id="progLang" style="display:flex;justify-content:center;">
+        <table border="2px solid black" cellspacing="0">
+            <tr>
+                <th rowspan="3" class="slPL">Programming<br>Languages</th>
+<!--                        <td style="background-color: skyblue;font-size: 1.15em;"><span style="vertical-align: middle;padding-top:45px;">C<img src="{% static 'ForIMAGES/c.png' %}" style="height: 30px;width: 40px;mix-blend-mode: darken;vertical-align: middle;"></span></td>-->
+                    <td class="tdPL" ><span style="vertical-align: text-top;">C<img class='PLimg' src="{% static 'ForIMAGES/c.png' %}"></span></td>
+                    <td class="tdPL" ><span style="vertical-align: text-top;">Python<img class='PLimg' src="{% static 'ForIMAGES/python.png' %}"></span></td>
+                    <td class="tdPL" ><span style="vertical-align: text-bottom;">TypeScript<img class='PLimg' src="{% static 'ForIMAGES/typescript.png' %}"</span></td>
+                    <td class="tdPL" ><span style="vertical-align: text-top;">Ruby<img class='PLimg' src="{% static 'ForIMAGES/ruby.png' %}"></span></td>
+
+            </tr>
+
+            <tr>
+                <td class="tdPL"><span style="vertical-align: text-top;">C++<img class='PLimg' src="{% static 'ForIMAGES/c++.png' %}"></span></td>
+                    <td class="tdPL"><span style="vertical-align: text-top;">Java<img class='PLimg' src="{% static 'ForIMAGES/java.png' %}"></span></td>
+                    <td class="tdPL"><span style="vertical-align: text-top;">R<img class='PLimg' src="{% static 'ForIMAGES/R.png' %}"></span></td>
+                    <td class="tdPL"><span style="vertical-align: text-top;">Kotlin<img class='PLimg' src="{% static 'ForIMAGES/Kotlin.png' %}"></span></td>
+            </tr>
+
+            <tr>
+                <td class="tdPL"><span style="vertical-align: text-top;">C Sharp<img class='PLimg' src="{% static 'ForIMAGES/csharp.png' %}"></span></td>
+                    <td class="tdPL2"><span style="vertical-align: text-top;">HTML<img class='PLimg' src="{% static 'ForIMAGES/html.png' %}"><br> CSS<img class="PLimg" src="{% static 'ForIMAGES/css.png' %}"><br> JavaScript<img class="PLimg" src="{% static 'ForIMAGES/js.png' %}"></span></td>
+                    <td class="tdPL"><span style="vertical-align: text-top;">php<img class='PLimg' src="{% static 'ForIMAGES/php.png' %}"></span></td>
+                    <td class="tdPL"><span style="vertical-align: text-top;">Golang<img class='PLimg' src="{% static 'ForIMAGES/golang.png' %}"></span></td>
+            </tr>
+
+<!--                <tr>-->
+<!--                    <td>C</td>-->
+<!--                </tr>-->
+
+<!--                <tr>-->
+<!--                    <td>C</td>-->
+<!--                </tr>-->
+        </table>
+    </div>
+
+
+    <div id="fullstack">
+
+    <table border="2px solid black" cellspacing = 0 >
+        <tr>
+            <th>
+                <h3>FIELD</h3>
+            </th>
+
+            <th>
+                <h3>COURSES</h3>
+            </th>
+        </tr>
+
+        <tr style="text-align: center;">
+            <td rowspan="6" style="padding: 0 15px;font-weight: bold;font-size: 1.2em;">Frontend Web Development</td>
+            <td style="padding: 5px 10px;background-color: rgb(255, 200, 20);font-size: 1.15em;"><span style="vertical-align: middle;">HTML</span><img src="{% static 'ForIMAGES/html.png' %}" style="height: 30px;width: 30px;vertical-align: middle;"></td>
+        </tr>
+
+
+
+        <tr style="text-align: center;">
+            <td style="padding: 5px 15px;background-color: rgb(0, 150, 255);font-size: 1.15em;color: whitesmoke;"><span style="vertical-align: middle;">CSS</span><img src="{% static 'ForIMAGES/css.png' %}" style="height: 30px;width: 30px;vertical-align: middle;"></td>
+        </tr>
+
+        <tr style="text-align: center;">
+            <td style="padding: 5px 15px;background-color: rgb(255, 225, 120);font-size: 1.15em;">JavaScript<img src="{% static 'ForIMAGES/js.png' %}" style="height: 25px;width: 25px;"></td>
+        </tr>
+
+        <tr style="text-align: center;">
+            <td style="padding: 5px 15px;background-color: rgb(225, 215, 255);font-size: 1.15em;color: blue;"><span style="vertical-align: middle;">React JS</span><img src="{% static 'ForIMAGES/react.png' %}" style="height: 25px;width: 25px;vertical-align: middle;"></td>
+        </tr>
+
+        <tr style="text-align: center;">
+            <td style="padding: 5px 15px;background-color: skyblue;font-size: 1.15em;"><span style="vertical-align: middle;">ExpressJS</span><img src="{% static 'ForIMAGES/expressJS.png' %}" style="height: 30px;width: 40px;mix-blend-mode: darken;vertical-align: middle;"></td>
+        </tr>
+
+        <tr style="text-align: center;">
+            <td style="padding: 5px 15px;background-color: rgb(225, 215, 255);font-size: 1.15em;color: blue;"><span style="vertical-align: middle;">Node JS</span><img src="{% static 'ForIMAGES/nodejs.png' %}" style="height: 25px;width: 25px;vertical-align: middle;"></td>
+        </tr>
+    </table>
+
+    <table border="2px solid black" cellspacing = 0>
+        <tr style="text-align: center;">
+            <th>
+                <h3 style="font-size: 1.3em;">FIELD</h3>
+            </th>
+
+            <th>
+                <h3 style="font-size: 1.3em;">COURSES</h3>
+            </th>
+        </tr>
+
+        <tr style="text-align: center;">
+            <td rowspan="4" style="padding: 0 15px;font-weight: bold;font-size: 1.2em;">Backend Web Development</td>
+            <td style="padding: 5px 10px;background-color: turquoise;font-size: 1.15em;"><span style="vertical-align: middle;">Python</span><img src="{% static 'ForIMAGES/python.png' %}" style="height: 30px;width: 30px;vertical-align: middle;">/<br><span style="vertical-align: middle;">Java</span><img src="{% static 'ForIMAGES/java.png' %}" style="height: 30px;width: 30px;vertical-align: middle;"></td>
+        </tr>
+
+        <tr style="text-align: center;">
+            <td style="padding: 5px 10px;background-color: rgb(165, 142, 42);font-size: 1.15em;color: white;"><span  style="vertical-align: middle;">Django</span><img src="{% static 'ForIMAGES/django.png' %}" style="height: 30px;width: 30px;vertical-align: middle;"> / <span style="vertical-align: middle;">Spring</span><img src="{% static 'ForIMAGES/spring.png' %}" style="vertical-align: middle;height: 35px;width: 35px;"></td>
+        </tr>
+
+        </table>
+
+</div>
+
+<div style="display: flex;justify-content: center;margin-top: 30px;" id="db">
+    <table border="2px solid black" cellspacing = 0>
+        <tr>
+            <th>
+                <h3>FIELD</h3>
+            </th>
+
+            <th>
+                <h3>COURSES</h3>
+            </th>
+        </tr>
+
+        <tr style="text-align: center;">
+            <td rowspan="2" style="padding: 0 15px;font-weight: bold;font-size: 1.2em;">Database Management System</td>
+            <td style="padding: 15px 15px;background-color: rosybrown;font-size: 1.15em;"><span  style="vertical-align: middle;">Structured Query Language</span><img src="{% static 'ForIMAGES/sql-server.png' %}" style="height: 35px;width: 35px;vertical-align: middle"></td>
+        </tr>
+
+        <tr style="text-align: center;">
+            <td style="padding: 15px 15px;background-color: rgb(255, 200, 20);font-size: 1.15em;"><span>MongoDB</span><img src="{% static 'ForIMAGES/mongoDB.png' %}" style="height: 35px;width: 35px;mix-blend-mode:multiply;vertical-align: middle"></tr>
+
+    </table>
+</div>
+
+<!-- <div style="display: flex;justify-content: center;margin-top: 30px;" >
+    <table border="2px solid black" cellspacing = 0>
+        <tr>
+            <th>
+                <h3>FIELD</h3>
+            </th>
+
+            <th>
+                <h3>COURSES</h3>
+            </th>
+        </tr>
+
+        <tr style="text-align: center;">
+            <td rowspan="4" style="padding: 0 65px;font-weight: bold;font-size: 1.2em;">MERN Stack</td>
+             <td style="padding: 15px 15px;background-color: rgb(255, 200, 20);font-size: 1.15em;"><span>MongoDB</span><img src="./mongoDB.png" style="height: 35px;width: 35px;mix-blend-mode:multiply;vertical-align: middle"></tr>
+
+            </tr>
+
+        <tr style="text-align: center;">
+            <td style="padding: 5px 15px;background-color: skyblue;font-size: 1.15em;"><span style="vertical-align: middle;">ExpressJS</span><img src="./expressJS.png" style="height: 30px;width: 40px;mix-blend-mode: darken;vertical-align: middle;"></td>
+            </td>
+
+            <tr style="text-align: center;">
+                <td style="padding: 5px 15px;background-color: rgb(225, 215, 255);font-size: 1.15em;color: blue;"><span style="vertical-align: middle;"><span style="font-weight: bold;">R</span>eact JS</span><img src="./react.png" style="height: 25px;width: 25px;vertical-align: middle;"></td>
+
+            </tr>
+
+            <tr style="text-align: center;">
+                <td style="padding: 5px 15px;background-color: rgb(225, 215, 255);font-size: 1.15em;color: blue;"><span style="vertical-align: middle;"><span style="font-weight: bold;">N</span>ode JS</span><img src="./nodeJS.png" style="height: 25px;width: 25px;vertical-align: middle;"></td>
+            </tr>
+
+    </table>
+</div> -->
+
+<!--<div id="standalone" style="margin-top: 30px;display: flex;justify-content: center;">-->
+<!--    <table border="2px solid black" cellspacing = 0>-->
+<!--        <tr style="text-align: center;">-->
+<!--            <td rowspan="10" style="font-size: 1.3em;padding:0 65px;"><b>Programming languages</b></td>-->
+<!--            <td style="padding: 5px 15px;font-size: 1.15em;vertical-align: middle;">C<img src="./c.png" style="height: 25px;width: 25px;vertical-align: middle;"></td>-->
+<!--        </tr>-->
+
+<!--        <tr style="text-align: center;">-->
+<!--            <td style="padding: 5px 15px;font-size: 1.15em;vertical-align: middle;">C++<img src="./c++.png" style="height: 25px;width: 25px;vertical-align: middle;"></td>-->
+<!--        </tr>-->
+
+<!--        <tr style="text-align: center;">-->
+<!--            <td style="padding: 5px 15px;font-size: 1.15em;vertical-align: middle;">C Sharp<img src="./csharp.png" style="height: 25px;width: 25px;vertical-align: middle;"></td>-->
+<!--        </tr>-->
+
+<!--        <tr style="text-align: center;">-->
+<!--            <td style="padding: 5px 15px;font-size: 1.15em;vertical-align: middle;">Python<img src="./python.png" style="height: 25px;width: 25px;vertical-align: middle;"></td>-->
+<!--        </tr>-->
+
+<!--        <tr style="text-align: center;">-->
+<!--            <td style="padding: 5px 15px;font-size: 1.15em;vertical-align: middle;">Java<img src="{% static 'ForIMAGES/java.png' %}" style="height: 25px;width: 25px;vertical-align: middle;"></td>-->
+<!--        </tr>-->
+
+<!--        <tr style="text-align: center;">-->
+<!--            <td style="padding: 5px 15px;font-size: 1.15em;">-->
+<!--                <span style="vertical-align: text-top;">HTML <img src="{% static 'ForIMAGES/html.png' %}" style="vertical-align: text-top;height: 25px;width: 25px;"></span>-->
+<!--                <span style="vertical-align: text-top;">,CSS <img src="{% static 'ForIMAGES/css.png' %}" style="vertical-align: text-top;height: 25px;width: 25px;"></span>-->
+<!--                <span style="vertical-align: text-top;">,JavaScript <img src="{% static 'ForIMAGES/js.png' %}" style="vertical-align: text-top;height: 25px;width: 25px;"></span></td>-->
+<!--        </tr>-->
+
+
+<!--        <tr style="text-align: center;">-->
+<!--            <td style="padding: 5px 15px;font-size: 1.15em;vertical-align:text-top;">TypeScript<img src="./typescript.png" style="height: 25px;width: 25px;vertical-align: text-top;"></td>-->
+<!--        </tr>-->
+
+<!--        <tr style="text-align: center;" >-->
+<!--            <td style="padding: 5px 15px;font-size: 1.15em;vertical-align: middle;">R<img src="./R.png" style="height: 25px;width: 25px;vertical-align: middle;"></td>-->
+<!--        </tr>-->
+
+<!--        <tr style="text-align: center;">-->
+<!--            <td style="padding: 5px 15px;font-size: 1.15em;vertical-align: middle;">php<img src="./php.png" style="height: 25px;width: 25px;vertical-align: middle;"></td>-->
+<!--        </tr>-->
+<!--    </table>-->
+<!--</div> -->
+
+<div style="display: flex;justify-content: center;margin-top: 30px;" id="cloud">
+    <table border="2px solid black" cellspacing = 0>
+        <tr>
+            <th>
+                <h3>FIELD</h3>
+            </th>
+
+            <th>
+                <h3>COURSES</h3>
+            </th>
+        </tr>
+
+        <tr style="text-align: center;">
+            <th rowspan="2" style="padding: 0 15px;font-weight: bold;font-size: 1.2em;">Cloud Computing Services</th>
+            <td style="padding: 15px 15px;background-color: rosybrown;font-size: 1.15em;"><span  style="vertical-align: middle;">Amazon Web Services</span><img src="{% static 'ForIMAGES/aws.png' %}" style="height: 45px;width: 45px;vertical-align: middle"></td>
+        </tr>
+
+        <tr style="text-align: center;">
+            <td style="padding: 15px 15px;background-color: rgb(255, 200, 20);font-size: 1.15em;"><span>Microsoft Azure</span><img src="{% static 'ForIMAGES/azure.png' %}" style="height: 35px;width: 35px;mix-blend-mode:multiply;vertical-align: middle"></tr>
+
+    </table>
+</div>
+
+<div id="fullstackwb">
+    <table border="2px solid black" cellspacing = 0 style="margin-top: 30px;margin-bottom: 100px;">
+        <tr>
+            <th style="padding:10px ;font-size: 1.2em;" colspan="8">Full Stack Web Development Courses</th>
+        </tr>
+
+        <tr>
+            <th rowspan="3" style="font-size: 1.1em;padding: 5px 15px;">
+                Python Full Stack
+            </th>
+
+            <!-- <td rowspan="3" style="color: transparent;">
+                sp
+            </td> -->
+
+            <th rowspan="12" style="padding: 5px 10px;">
+                FRONTEND <br>DEVELOPMENT
+            </th>
+
+            <td style="padding: 5px 8px;">HTML</td>
+
+            <th rowspan="12" style="padding: 5px 10px;">
+                BACKEND<br>DEVELOPMENT
+            </th>
+
+            <td style="padding: 5px 8px;">
+                Python<br>(Basics & Advanced)
+            </td>
+
+            <th rowspan="12" style="padding: 5px 10px;">
+                DATABASE<br>MANAGEMENT<br>SYSTEM
+            </th>
+
+            <td style="padding: 5px 8px;">
+                SQL<br>
+                (Microsoft SQL Server)
+            </td>
+        </tr>
+
+        <tr>
+            <td>CSS</td>
+            <td rowspan="2">Django</td>
+            <td rowspan="2">
+                MongoDB
+            </td>
+        </tr>
+
+        <tr>
+            <td>JS</td>
+        </tr>
+
+        <tr>
+            <th colspan="8"></th>
+         </tr>
+
+        <tr>
+            <th rowspan="3"  style="font-size: 1.1em;">
+                Java Full Stack
+            </th>
+
+
+
+            <!-- <td rowspan="3" style="color: transparent;">
+                sp
+            </td> -->
+
+            <!-- <th rowspan="3">
+                Frontend<br>Development
+            </th> -->
+
+            <td>HTML</td>
+
+            <!-- <th rowspan="3">
+                Backend<br>Development
+            </th> -->
+
+            <td>
+                Java<br>(Basics & Advanced)
+            </td>
+
+            <!-- <th rowspan="3">
+                Database<br>Management<br>System
+            </th> -->
+
+            <td>
+                SQL<br>
+                (Microsoft SQL Server)
+            </td>
+        </tr>
+
+        <tr>
+            <td>CSS</td>
+            <td rowspan="2">Spring</td>
+            <td rowspan="2">
+                MongoDB
+            </td>
+        </tr>
+
+        <tr>
+            <td>JS</td>
+        </tr>
+
+        <tr>
+            <th colspan="8"></th>
+         </tr>
+
+        <tr>
+            <th rowspan="4"  style="font-size: 1.1em;">
+                MERN Stack
+            </th>
+
+
+
+            <!-- <td rowspan="3" style="color: transparent;">
+                sp
+            </td> -->
+
+            <!-- <th rowspan="4">
+                Frontend<br>Development
+            </th> -->
+
+            <td>HTML</td>
+
+            <!-- <th rowspan="4">
+                Backend<br>Development
+            </th> -->
+
+            <td>
+                php
+            </td>
+
+            <!-- <th rowspan="4">
+                Database<br>Management<br>System
+            </th> -->
+
+            <td rowspan="4">
+                MongoDB
+            </td>
+        </tr>
+
+        <tr>
+            <td>CSS</td>
+            <td rowspan="2">nodeJS</td>
+        </tr>
+
+        <tr>
+            <td>JS</td>
+        </tr>
+
+        <tr>
+            <td>React</td>
+            <td>ExpressJS</td>
+        </tr>
+    </table>
+</div>
+
+
+<script>
+    const textContainer = document.getElementById("text");
+const spans = textContainer.querySelectorAll("h3");
+let index = 0;
+
+function showNextLetter() {
+    if (index < spans.length) {
+        spans[index].style.display = "block";
+        index++;
+        setTimeout(showNextLetter, 200);
+    }
+
+}
+
+showNextLetter();
+
+</script>
+</body>
+</body>
+</html>

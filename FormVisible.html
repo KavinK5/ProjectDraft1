@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    div{
+        display:flex;
+        justify-content:center;
+        flex-direction:column;
+        align-items:center;
+    }
+
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color:wheatsmoke;
+        }
+
+
+       table tr td{
+           font-size:1.2em;
+           padding:10px 25px;
+           text-align:center;
+       }
+
+       h2{
+        background-color:lightslategrey;
+        color:white;
+        padding:5px;
+       }
+
+       h3{
+        font-size:1.25em;
+       }
+    </style>
+</head>
+<body>
+<div>
+    <h2>Congratulations,Your Details have been Recorded Successfully</h2>
+<table cellspacing="0" border="2px solid black">
+
+    <tr>
+        <th  colspan="2"><h3>Entered Details</h3></th>
+<!--        <th>Entered Details</th>-->
+    </tr>
+
+    <tr>
+        <td colspan="2">Name:-<br>{{user.Name_COL}}</td>
+<!--        <td>Father's Name:-<br>{{user.FathersName_COL}}</td>-->
+    </tr>
+
+    <tr>
+        <td>Qualification:-<br>{{user.Qualification_COL}}</td>
+        <td>Contact:-<br>{{user.MobileNumber_COL}}</td>
+    </tr>
+
+
+    <tr>
+        <td>Email:-<br>{{user.EmailID_COL}}</td>
+        <td>Field:-<br>{{user.OptedField_COL}}</td>
+    </tr>
+
+    <tr>
+        <td>Courses:-<br>{{user.OptedCourse_COL}}</td>
+        <td>Mode:-<br>{{user.ModeOfClass_COL}}</td>
+    </tr>
+</table>
+    </div>
+
+<div class="addinfo" style="font-size:1.1em;margin-top:100px;">
+    <div style="font-size:1.07em;">Visit the Academy for Further details regarding</div>
+    <div>Fee Structure   |   Time Slot   |   Date of Joining</div>
+</div>
+</body>
+</html>

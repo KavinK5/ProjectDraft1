@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CourseRegistration</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'ForCSS/HomeStyles.css' %}">
+    <style>
+
+    .SrcEnq
+        {
+            margin-bottom: 0px;
+        }
+
+    #brsp{
+        margin-top:100px;
+        display:none;
+}
+        @media (max-width:800px) {
+
+        div .headR nav
+        {
+            margin-top: -15px;
+            display: flex;
+            flex-direction: column;
+            gap:0px;
+            align-items: center;
+            position: relative;
+            background-color:rgb(96, 100, 70);
+        }
+
+        div .headR nav a
+        {
+            gap:10px;
+            color:white;
+            background-color: transparent;
+        }
+
+        div .headR nav a:hover
+        {
+            color:black;
+            background-color: transparent;
+        }
+
+        .content{
+            margin-top: 0px;
+        }
+
+        #menuIcon
+        {
+            display:block;
+        }
+
+        div .headR nav{
+            display: none;
+        }
+
+    }
+
+    @media(max-width:350px){
+        /* #menuIcon
+        {
+            display: none;
+        } */
+
+        div .headR nav{
+            display: flex;
+        }
+    }
+    </style>
+</head>
+<body>
+
+<div>
+        <div class="headR">
+            <img src="{% static 'ForIMAGES/elysium.png' %}">
+            <nav id="headerNav">
+                <a href="">About</a>
+                <a href="">Services</a>
+                <a href="{% url 'courseTable' %}">Courses</a>
+                <a href="">Contact</a>
+                <!-- <a href="">Logout</a> -->
+            </nav>
+            <!-- <button><ion-icon name="menu"></ion-icon></button> -->
+            <ion-icon name="menu" id="menuIcon">☰</ion-icon>
+
+
+
+        </div>
+        <div id="top">
+            <div class="WholeContent">
+                <div class="content">
+                    <div id="brsp">
+
+                     </div>
+                        <img src="{% static 'ForIMAGES/quotes1.jpg' %}">
+                        <div class="formFor">
+                                    <div id="regText1">
+                                        <span>Registration Form</span>
+                                    </div>
+
+                            <form method="POST">
+                                {% csrf_token %}
+                                <label for="Fname">Name</label><br>
+                                <input  required autocomplete="off"  type="text" id="Fname" name="Cname">
+
+
+                                <label for="Fdadname">Father's Name</label><br>
+                                <input required    type="text" id="Fdadname" name="Cdadname">
+
+                                <label>Gender</label><br>
+                                <span id="spanID">
+                                    <span>
+                                        <input required    type="radio" name="gen" id="Male" value="Male">
+                                        <label for="Male">Male</label>
+                                    </span>
+                                    <span>
+                                        <input required    type="radio" name="gen" id="Female" value="Female">
+                                        <label for="Female">Female</label>
+                                    </span>
+                                    <span>
+                                        <input  required   type="radio" name="gen" id="others" value="others">
+                                        <label for="others">Others</label> <br>
+                                    </span>
+                                </span>
+
+                                <label>Qualification</label><br>
+                                <span id="spanID1">
+                                    <span>
+                                        <input  required   type="radio" name="qua" id="SSLC" value="SSLC" onclick="toggleAct('SSLC')">
+                                        <label for="SSLC">SSLC</label>
+                                    </span>
+
+                                    <span>
+                                        <input  required   type="radio" name="qua" id="HSC" value="HSC" onclick="toggleAct('HSC')">
+                                        <label for="HSC">HSC</label>
+                                    </span>
+
+                                    <span>
+                                        <input required    type="radio" name="qua" id="Degree" value="Degree" onclick="toggleAct('Degree')">
+                                        <label for="Degree">Degree</label>
+                                    </span>
+
+                                    <span>
+                                        <input required    type="radio" name="qua" id="Others" value="Others" onclick="toggleAct('Others')">
+                                        <label for="Others">Others</label>
+                                    </span>
+                                </span><br>
+
+                            <div id="schlDiv">
+                                <label for="Fschname">School Name</label><br>
+                                <input   type="text" id="Fschname" name="Cschname"><br>
+                            </div>
+
+                            <div id="degDetails">
+                                <div>
+                                    <label for="degID">Degree</label><br>
+                                    <select   id="degID">
+                                        <option value="">Degree?</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="deptID">Department</label><br>
+                                    <select   id="deptID">
+
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div id="dipQualif">
+                                <input   type="text" id="Fdip" name="Cdip" placeholder="Mention the Qualification"><br>
+                            </div>
+
+                                <div id="moreclg">
+                                <label for="Fclgname">Institution</label><br>
+                                <input   type="text" id="Fclgname" name="Cclgname" ><br>
+                            </div>
+
+                            <div id="clgyr">
+                                <label for="Fyr">Year of Passed Out</label><br>
+                                <input required    type="text" id="Fyr" name="Cyr" pattern="20[012]{1}[0-9]{1}"><br>
+                            </div>
+
+                            <div id="divEmail">
+                                <label for="Fem">Email Address</label><br>
+                                <input  required autocomplete="off"  type="email" id="Fem" name="Cem" placeholder="domain112@-----" pattern="([0-9a-zA-Z\.?]+)@([a-z\.]+)"><br>
+                            </div>
+
+                            <div id="divContact">
+                                <label for="Fcntct">Mobile Number</label><br>
+                                <input  required   type="text" inputmode="numeric" placeholder="xxx-xxx-xxxx" pattern="[1-9]{1}[0-9]{2}-[0-9]{3}-[0-9]{4}" id="Fcntct" name="Ccntct"><br>
+                            </div>
+
+                                <div id="courseDetails">
+                                <div>
+                                    <label for="fieldID">Field</label><br>
+                                    <select required  id="fieldID" style="padding:5px 10px 5px 5px;width:215px;cursor:pointer;border:2px solid black;border-radius:5px;margin-bottom:10px;text-align:center;"  >
+                                        <option>Choose the Field</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="courseID">Courses</label><br>
+                                    <select required id="courseID" style="padding:5px 10px 5px 5px;width:285px;cursor:pointer;border:2px solid black;border-radius:5px;margin-bottom:10px;font-weight:bold;text-align:center;"  ></select>
+                                </div>
+                            </div>
+                                <p style="margin-top:-10px;margin-bottom:10px;">Click Courses NAV to get detailed decription</p>
+
+                            <div class="SrcEnq">
+                                <label>Preferred Mode of Class</label><br>
+                                <div class="modeOFF">
+                                    <div>
+                                        <input required  type="radio" value="Online" name="q21" id="Online">
+                                        <label for="Online">Online</label>
+                                    </div>
+
+                                    <div>
+                                        <input required  type="radio" value="Offline" name="q21" id="Offline">
+                                        <label for="Offline">Offline</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div>
+                                radio: <input type="text" id="try1">
+                            </div>
+
+<br>
+
+<div>
+    select: <input type="text" id="try7">
+</div> -->
+<br>                <div style="display:none">
+                                <input type="text" id='radValGENDER' name="FetchGender">
+                                <input type="text" id='radValQUALIFICATION' name="FetchQualification">
+                                <input type="text" id='radValMODE' name="FetchMode">
+                                <input type="text" id='radValDEG' name="FetchDegree">
+                                <input type="text" id='radValDEPT' name="FetchDept">
+                                <input type="text" id='radValFIELD' name="FetchField">
+                                <input type="text" id='radValCOURSE' name="FetchCourse">
+                    </div>
+<br><br>
+                             <input class="btn1" type="submit" value="Submit">
+                            </form>
+                        </div>
+                </div>
+            </div>
+         </div>
+    </div>
+
+    <script>
+        document.getElementsByName('gen').forEach(itr1 =>
+            itr1.addEventListener('click',radioFnc)
+        )
+
+
+        function radioFnc(){
+            document.getElementsByName('gen').forEach(itr1 => {
+                if(itr1.checked){
+                    document.getElementById('try1').value = itr1.value;
+                }
+            });
+        }
+
+        document.getElementById('deptID').addEventListener('change',slctFnc);
+        function slctFnc(){
+            try7.value = this.value;
+        }
+
+
+
+        let degVar = ['M.E','M.Tech','M.Sc','M.A','M.Com','B.E','B.Tech','B.Sc','B.A','B.Com'];
+
+        let deptEngineering = [' Civil Engineering', 'Aeronautical Engineering', 'Automobile Engineering', 'Bioinformatics', 'Biomedical Engineering', 'Computer Science and Engineering', 'Electrical and Electronics Engineering', 'Electronics and Communication Engineering', 'Mechanical Engineering', 'Mechatronics Engineering']
+        let deptTech = ['Artificial Intelligence and Data Science', 'Biotechnology', 'Chemical Engineering', 'Fashion Technology', 'Information Technology']
+        let deptScience = ['Biochemistry', 'Biology', 'Biotechnology', 'Botony', 'Chemistry', 'Computer Science', 'Data Science', 'Forensic Sciences', 'Information Technology', 'Mathematics', 'Microbiology', 'Physics', 'Statistics', 'Zoology']
+        let deptArts = ['Economics', 'English', 'French', 'German', 'History', 'Philosophy', 'Political Science', 'Psychology']
+        let deptCmrs = ['Accountancy', 'Accounting and Finance', 'Banking and Finance', 'Computer Science', 'Economics', 'Finance', 'Marketing']
+
+        let Slct1 = document.getElementById('degID');
+        let Slct2 = document.getElementById('deptID');
+
+        degVar.forEach(function addDegree(item){
+            let option = document.createElement('option');
+            option.text = item;
+            option.value = item;
+            Slct1.appendChild(option);
+        });
+
+        Slct1.onchange = function(){
+            Slct2.innerHTML = '<option></option>';
+            if (this.value == 'B.E' || this.value == 'M.E'){
+                addToSlct2(deptEngineering);
+            }
+
+            if (this.value == 'B.Tech' || this.value == 'M.Tech'){
+                addToSlct2(deptTech);
+            }
+
+            if (this.value == 'B.Sc' || this.value == 'M.Sc'){
+                addToSlct2(deptScience);
+            }
+
+            if (this.value == 'B.Com' || this.value == 'M.Com'){
+                addToSlct2(deptCmrs);
+            }
+
+            if (this.value == 'B.A' || this.value == 'M.A'){
+                addToSlct2(deptArts);
+            }
+        }
+
+        function addToSlct2(arr){
+            arr.forEach(function (item){
+                let option = document.createElement('option');
+                option.text = item;
+                option.value = item;
+                Slct2.appendChild(option);
+            })
+        }
+
+let fieldVar = [
+        'Programming Languages',
+        'Web Development',
+        'Data Science',
+        'Cloud Computing'
+      ];
+
+      let coursePL = [
+        'C',
+        'C++',
+        'C#',
+        'Python',
+        'Java',
+        'HTML,CSS,JS',
+        'TypeScript',
+        'R',
+        'php',
+        'Ruby',
+        'Kotlin',
+        'Golang'
+      ];
+
+      let courseWD = [
+        'Frontend Web Development',
+        'MERN Stack',
+        'Python Full Stack Web Development',
+        'Java Full Stack Web Development'
+      ];
+
+      let courseDS = ['Python Data Science'];
+
+      let courseCC = ['Microsoft Azure', 'AWS'];
+
+      let slTag1 = document.getElementById('fieldID');
+      let slTag2 = document.getElementById('courseID');
+
+      fieldVar.forEach(function addFields(item) {
+        let option = document.createElement('option');
+        option.text = item;
+        option.value = item;
+        slTag1.appendChild(option);
+      });
+
+      slTag1.onchange = function () {
+        slTag2.innerHTML = '<option></option>';
+        if (this.value == 'Programming Languages') {
+          addToSlTag2FC(coursePL);
+        }
+
+        if (this.value == 'Web Development') {
+          addToSlTag2FC(courseWD);
+        }
+
+        if (this.value == 'Data Science') {
+          addToSlTag2FC(courseDS);
+        }
+
+        if (this.value == 'Cloud Computing') {
+          addToSlTag2FC(courseCC);
+        }
+      };
+
+      function addToSlTag2FC(arr) {
+        arr.forEach(function (item) {
+          let option = document.createElement('option');
+          option.text = item;
+          option.value = item;
+          slTag2.appendChild(option);
+        });
+      }
+
+        function toggleAct(parameter1){
+            document.getElementById('schlDiv').style.display = 'none';
+            document.getElementById('degDetails').style.display = 'none';
+            document.getElementById('moreclg').style.display = 'none';
+            document.getElementById('dipQualif').style.display = 'none';
+            document.getElementById('clgyr').style.display = 'none';
+            if (parameter1 == 'SSLC' || parameter1 == 'HSC'){
+                document.getElementById('schlDiv').style.display = 'block';
+                document.getElementById('clgyr').style.display = 'block';
+            }
+
+            if (parameter1 == 'Degree'){
+                document.getElementById('degDetails').style.display = 'flex';
+                document.getElementById('moreclg').style.display = 'block';
+                document.getElementById('clgyr').style.display = 'block';
+            }
+
+            if (parameter1 == 'Others'){
+                document.getElementById('dipQualif').style.display = 'block';
+                document.getElementById('clgyr').style.display = 'block';
+                document.getElementById('moreclg').style.display = 'block';
+            }
+        }
+
+
+        var ic1  = document.getElementById('menuIcon')
+        var nav1 = document.getElementById('headerNav')
+        var brsp1 = document.getElementById('brsp');
+        var dter = 0;
+
+        ic1.addEventListener('click', function(){
+            if (dter === 0){
+                nav1.style.display = 'flex';
+                brsp1.style.display = 'block';
+                dter = 1;
+            }
+
+            else{
+                nav1.style.display = 'none';
+                brsp1.style.display = 'none';
+                dter = 0;
+            }
+        })
+
+
+          var rd1 = document.querySelectorAll("input[name = 'gen']");
+          var txt1 = document.getElementById('radValGENDER');
+
+          let func1 = () => {
+            varStore = document.querySelector("input[name = 'gen']:checked").value;
+            txt1.value = varStore;
+          }
+
+          rd1.forEach(itr => {
+            itr.addEventListener('change',func1)
+          })
+
+
+          var rd2 = document.querySelectorAll("input[name = 'qua']");
+          var txt2 = document.getElementById('radValQUALIFICATION');
+
+          let func2 = () => {
+            varStore2 = document.querySelector("input[name = 'qua']:checked").value;
+            txt2.value = varStore2;
+          }
+
+          rd2.forEach(itr => {
+            itr.addEventListener('change',func2)
+          })
+
+
+          var rd3 = document.querySelectorAll("input[name = 'q21']");
+          var txt3 = document.getElementById('radValMODE');
+
+          let func3 = () => {
+            varStore3 = document.querySelector("input[name = 'q21']:checked").value;
+            txt3.value = varStore3;
+          }
+
+          rd3.forEach(itr => {
+            itr.addEventListener('change',func3)
+          })
+
+
+
+          document.getElementById('degID').addEventListener('change',fnc11)
+
+        function fnc11(){
+          document.getElementById('radValDEG').value = this.value;
+        }
+
+
+        document.getElementById('deptID').addEventListener('change',fnc22)
+
+        function fnc22(){
+          document.getElementById('radValDEPT').value = this.value;
+        }
+
+        document.getElementById('fieldID').addEventListener('change',fnc33)
+
+        function fnc33(){
+          document.getElementById('radValFIELD').value = this.value;
+        }
+
+        document.getElementById('courseID').addEventListener('change',fnc44)
+
+        function fnc44(){
+          document.getElementById('radValCOURSE').value = this.value;
+        }
+    </script>
+
+</body>
+</html>
+
